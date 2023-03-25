@@ -13,6 +13,7 @@
     android:paddingHorizontal="50sp"
     android:layout_marginHorizontal="25sp"
     android:layout_marginTop="20sp"
+    android:background="@color/black"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
