@@ -1,0 +1,73 @@
+import pygame
+from colorthief import ColorThief
+import os
+print(os.getcwd())
+
+
+# List of image file names
+image_files = ['323.jpg', '323.jpg', '324.jpg', '325.jpg']
+
+def rgb_to_hex(r,g,b):
+    return '#{:02x}{:02x}{:02x}'.format(r,g,b)
+
+# Initialize Pygame mixer
+pygame.mixer.init()
+
+# Load sound files for each note
+sounds = {
+    'A': pygame.mixer.Sound('A.wav'),
+    'A#': pygame.mixer.Sound('A#.wav'),
+    'B': pygame.mixer.Sound('B.wav'),
+    'C': pygame.mixer.Sound('C.wav'),
+    'C#': pygame.mixer.Sound('C#.wav'),
+    'D': pygame.mixer.Sound('D.wav'),
+    'D#': pygame.mixer.Sound('D#.wav'),
+    'E': pygame.mixer.Sound('E.wav'),
+    'F4': pygame.mixer.Sound('F4.wav'),
+    'F5': pygame.mixer.Sound('F5.wav'),
+    'F#': pygame.mixer.Sound('F#.wav'),
+    'G': pygame.mixer.Sound('G.wav'),
+    'G#': pygame.mixer.Sound('G#.wav')
+}
+
+# Loop over image files and extract color information
+for file_name in image_files:
+    ct = ColorThief(file_name)
+    palette = ct.get_palette(color_count=5)
+    for x in palette:
+        r = x[0]
+        g = x[1]
+        b = x[2]
+        hex_string = rgb_to_hex(r, g, b)
+        key="A"
+        #print(hex_string)
+        if (int(b) >50):
+            if (int(r)>=255):
+                if(int(g)<236):
+                    key="A"
+                else:
+                    key="A#"
+            elif (int(r)>=238):
+                key= "G#"
+            elif (int(r)>=179):
+                key="G"
+            elif(int(r)>=153):
+                key= "B"
+            elif (int(r)>=116):
+                key="F#"
+            elif(int(r)>=85):
+                key= "F5"
+            elif(int(r)>=82):
+                key="F4"
+            elif (int(r)>=69):
+                key= "E"
+            elif(int(r)>=40):
+                key= "C"
+            elif (int(r)>=5):
+                key= "D#"
+            elif (int(g)>=255):
+                key= "C#"
+            else:
+                key= "D"
+            print(key)
+        sounds[key].play()
