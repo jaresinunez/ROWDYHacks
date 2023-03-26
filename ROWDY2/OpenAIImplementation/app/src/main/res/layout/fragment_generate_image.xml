@@ -20,7 +20,8 @@
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
 
     <androidx.core.widget.NestedScrollView
@@ -46,7 +47,7 @@
 
                 <GridLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="500sp"
                     android:columnCount="2">
                     <View
                         android:layout_width="0dp"
@@ -60,7 +61,7 @@
             <GridLayout
                 android:id="@+id/generatedImagesGrid"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="500sp"
                 android:layout_marginTop="10dp"
                 android:columnCount="2"
                 android:visibility="gone">
@@ -68,7 +69,7 @@
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/generatedImageCard"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="500sp"
                     android:layout_columnWeight="1"
                     android:layout_margin="@dimen/margin_small"
                     android:clickable="true"

@@ -62,7 +62,6 @@ class GenerateImageFragment : Fragment(R.layout.fragment_generate_image) {
 
                                 generatedImageView.glideImage(response.data.data[0].url)
 
-
                                 generatedImageCard.setOnClickListener {
                                     showImageFullPage(response.data.data[0].url)
                                 }
