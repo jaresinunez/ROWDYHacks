@@ -18,5 +18,17 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     android:contentDescription="@string/astronomy_picture_of_the_day" />
+<ImageView
+    android:id="@+id/astronomy_pod2"
+    android:layout_width="match_parent"
+    android:layout_height="250sp"
+    android:paddingHorizontal="50sp"
+    android:layout_marginHorizontal="25sp"
+    android:layout_marginTop="20sp"
+    android:background="@color/black"
+    app:layout_constraintTop_toBottomOf="@id/astronomy_pod"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:contentDescription="@string/astronomy_picture_of_the_day" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
